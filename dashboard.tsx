@@ -10,12 +10,12 @@ import Local from './load-bot-preview/local';
 import Cards from './cards';
 import InfoPanel from './info-panel';
 import UserGuide from './user-guide';
-
+import './style.css';
 type TMobileIconGuide = {
     handleTabChange: (active_number: number) => void;
 };
 
-const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
+const ApolloBots = observer(({ handleTabChange }: TMobileIconGuide) => {
     const { ui } = useStore();
     const { load_modal, dashboard } = useDBotStore();
     const { dashboard_strategies } = load_modal;
@@ -59,7 +59,7 @@ const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
                     <div className='quick-panel'>
                         <div
                             className={classNames('tab__dashboard__header', {
-                                'tab__dashboard__header--listed': !is_mobile && has_dashboard_strategies,
+                                'apollo_tab__dashboard__header--listed': !is_mobile && has_dashboard_strategies,
                             })}
                         >
                             {!has_dashboard_strategies && (
@@ -82,7 +82,7 @@ const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
                                 className={classNames('subtitle', { 'subtitle__has-list': has_dashboard_strategies })}
                             >
                                 {localize(
-                                    'Import a bot from your computer or Google Drive, build it from scratch, or start with a quick strategy.'
+                                    "Empower your trading journey🚀 with the elite performance of the market's finest bots🤖, crafted to provide you with an unparalleled competitive advantage."
                                 )}
                             </Text>
                         </div>
@@ -96,7 +96,7 @@ const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
                         </div>
                         {is_mobile && <Local />}
                     </div>
-                    <div className={classNames('preview-panel', { 'preview-panel--active': has_dashboard_strategies })}>
+                    <div className={classNames('preview-panel', { 'apollo-preview-panel--active': has_dashboard_strategies })}>
                         {has_dashboard_strategies && !is_mobile && (
                             <div className='tab__dashboard__preview'>
                                 <Local />
@@ -111,4 +111,4 @@ const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
     );
 });
 
-export default DashboardComponent;
+export default ApolloBots;

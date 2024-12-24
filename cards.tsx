@@ -114,35 +114,7 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies }: TCardProps) => 
                     })}
                     id='tab__dashboard__table__tiles'
                 >
-                    {actions.map(icons => {
-                        const { icon, content, method, type } = icons;
-                        return (
-                            <div
-                                key={content}
-                                className={classNames('tab__dashboard__table__block', {
-                                    'tab__dashboard__table__block--minimized': has_dashboard_strategies && is_mobile,
-                                })}
-                            >
-                                <Icon
-                                    className={classNames('tab__dashboard__table__images', {
-                                        'tab__dashboard__table__images--minimized': has_dashboard_strategies,
-                                    })}
-                                    width='8rem'
-                                    height='8rem'
-                                    icon={icon}
-                                    id={icon}
-                                    onClick={() => {
-                                        method();
-                                        rudderstackDashboardChooseShortcut({ shortcut_name: type });
-                                    }}
-                                />
-                                <Text color='prominent' size={is_mobile ? 'xxs' : 'xs'}>
-                                    {content}
-                                </Text>
-                            </div>
-                        );
-                    })}
-                    <input
+                    {/* <input
                         type='file'
                         ref={file_input_ref}
                         accept='application/xml, text/xml'
@@ -153,7 +125,7 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies }: TCardProps) => 
                             setFileLoaded(true);
                             setOpenSettings('import');
                         }}
-                    />
+                    /> */}
                     <DesktopWrapper>
                         <Dialog
                             title={dialog_options.title}
